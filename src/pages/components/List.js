@@ -7,14 +7,7 @@ const List = ({ listData, deleteData }) => {
     <div className="list">
       {listData.map((item) => {
         const { note, id } = item;
-        return (
-          <Item
-            key={id}
-            id={id}
-            note={note}
-            deleteData={deleteData}
-          />
-        );
+        return <Item key={id} id={id} note={note} deleteData={deleteData} />;
       })}
     </div>
   );

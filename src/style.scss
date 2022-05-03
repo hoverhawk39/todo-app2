@@ -1,65 +1,65 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
-.header{
-    height: 100px;
-    background-color: rgb(0, 56, 120);
-    color:white;
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header {
+  height: 100px;
+  background-color: rgb(0, 56, 120);
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.welcome{
-    height: 200px;
-    background-color:#a8dbee;
-    color:black;
-    font-size:25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.welcome {
+  height: 200px;
+  background-color: #a8dbee;
+  color: black;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn-part{
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
+.btn-part {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
 }
-.start{
-    cursor: pointer;
-    height: 40px;
+.start {
+  cursor: pointer;
+  height: 40px;
 }
-.app{
-    margin: 0px 10px;
+.app {
+  margin: 0px 10px;
 }
-.addForm{
-    text-align: center;
-    padding: 50px 0 0 0;
+.addForm {
+  text-align: center;
+  padding: 50px 0 0 0;
 }
-input{
-    height: 33px;
+input {
+  height: 33px;
 }
-.insert{
-    cursor: pointer;
-    height: 40px;
-    margin-left: 10px;
+.insert {
+  cursor: pointer;
+  height: 40px;
+  margin-left: 10px;
 }
-.list{
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+.list {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 500px;
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
 }
-.remove{
-    cursor: pointer;
-    height: 40px;
-    margin-left: 180px;
+.remove {
+  cursor: pointer;
+  height: 40px;
+  margin-left: 180px;
 }
-.goback{
-    cursor: pointer;
-    height: 40px;
+.goback {
+  cursor: pointer;
+  height: 40px;
 }

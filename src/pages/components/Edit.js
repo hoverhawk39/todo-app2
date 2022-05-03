@@ -21,10 +21,10 @@ const Edit = ({ add }) => {
   return (
     <div className="addForm">
       <input type="text" value={note} onChange={noteChange} />
-      <button onClick={addItem} className="insert" >
+      <button onClick={addItem} className="insert">
         新增紀錄
       </button>
-      <hr/>
+      <hr />
     </div>
   );
 };
