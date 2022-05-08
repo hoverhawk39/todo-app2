@@ -1,13 +1,9 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import Edit from "./components/Edit";
 import List from "./components/List";
 
-const ListPage = ({ minusOne }) => {
-  function minus() {
-    minusOne(function (prev) {
-      return prev - 1;
-    });
-  }
+const ListPage = () => {
 
   const [data, setData] = useState([]);
   return (
@@ -15,9 +11,9 @@ const ListPage = ({ minusOne }) => {
       <Edit add={setData} />
       <List listData={data} deleteData={setData} />
       <div className="btn-part">
-        <button className="goback" onClick={minus}>
-          返回首頁
-        </button>
+      <Link to="/">
+        <button className="goback">返回首頁</button>
+      </Link>
       </div>
     </div>
   );
