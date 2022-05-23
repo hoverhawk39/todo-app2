@@ -1,40 +1,41 @@
 import "./style.scss";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import HomePage from "./pages/HomePage";
 import ListPage from "./pages/ListPage";
+import db from "./firestore";
+import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const orderCollection = collection(db, "todos");
+// let key;
+async function addNewDoc(){
+    const docRef = await addDoc(orderCollection, {
+      first: "Q",
+      last: "Jane",
+      born: 900008,
+    });
+    console.log(`Document written with ID: ${docRef.path}`);
+    let key = docRef.path;
+    console.log(key);
+    // console.log(typeof(key));
+    const goal = doc(db, key);
+    const mySnapShot = await getDoc(goal);
+    if(mySnapShot.exists()){
+    const docData = mySnapShot.data();
+    console.log(`My data is: ${JSON.stringify(docData)}`);
+    }
+}
+addNewDoc();
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDsH2NevTy5ppEyOJp9kmDFxG8hmW96wzA",
-  authDomain: "wehelp-project.firebaseapp.com",
-  projectId: "wehelp-project",
-  storageBucket: "wehelp-project.appspot.com",
-  messagingSenderId: "434072008102",
-  appId: "1:434072008102:web:0cd60ebf9a555553e74b67",
-  measurementId: "G-1CG45N8YEH"
-};
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rootElement=document.getElementById("root");
-
-ReactDOM.render(  
+root.render(  
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="list" element={<ListPage />} />
         </Routes>
-    </BrowserRouter>, 
-    rootElement
+    </BrowserRouter>
 );

@@ -52,12 +52,15 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 500px;
+  margin: 20px 0px;
+}
+.text {
+  width: 400px;
+  overflow-x: auto;
+  text-overflow: clip;
 }
 .remove {
   cursor: pointer;
-  height: 40px;
-  margin-left: 180px;
 }
 .goback {
   cursor: pointer;

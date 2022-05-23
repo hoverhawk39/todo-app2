@@ -9,8 +9,7 @@ const Item = ({ id, note, deleteData }) => {
 
   return (
     <div className="item">
-      <div>
-        <p>{note}</p>
+      <div className="text">{note}
       </div>
       <button onClick={deleteItem} className="remove">
         刪除

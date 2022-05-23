@@ -13,7 +13,7 @@ const Edit = ({ add }) => {
         ...prevData,
         {
           id: v4(),
-          note,
+          note:note,
         },
       ];
     });
