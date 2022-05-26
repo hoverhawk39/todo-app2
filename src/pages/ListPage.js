@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Edit from "./components/Edit";
 import List from "./components/List";
 
 const ListPage = () => {
-
-  const [data, setData] = useState([]);
+  const [todos, setTodos] = useState([]);
   return (
     <div className="app">
-      <Edit add={setData} />
-      <List listData={data} deleteData={setData} />
+      <Edit add={setTodos} />
+      <List listData={todos} set={setTodos} deleteData={setTodos} />
       <div className="btn-part">
-      <Link to="/">
-        <button className="goback">返回首頁</button>
-      </Link>
+        <Link to="/">
+          <button className="goback">返回首頁</button>
+        </Link>
       </div>
     </div>
   );

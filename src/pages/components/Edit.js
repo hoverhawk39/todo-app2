@@ -1,26 +1,35 @@
 import React, { useState } from "react";
-import { v4 } from "uuid";
+import db from "../../firestore";
+import { serverTimestamp, collection, addDoc } from "firebase/firestore";
+
+const todoRef = collection(db, "todos");
 
 const Edit = ({ add }) => {
-  const [note, setNote] = useState([""]);
-  function noteChange(e) {
-    setNote(e.target.value);
+  const [input, setInput] = useState([""]);
+  function inputChange(e) {
+    setInput(e.target.value);
   }
 
   function addItem() {
     add(function (prevData) {
+      const additem = {
+        todo: input,
+        timestamp: serverTimestamp(),
+      };
+      addDoc(todoRef, additem);
+      setInput("");
       return [
         ...prevData,
         {
-          id: v4(),
-          note:note,
+          id: additem.timestamp,
+          item: additem.todo,
         },
       ];
     });
   }
   return (
     <div className="addForm">
-      <input type="text" value={note} onChange={noteChange} />
+      <input type="text" value={input} onChange={inputChange} />
       <button onClick={addItem} className="insert">
         新增紀錄
       </button>
