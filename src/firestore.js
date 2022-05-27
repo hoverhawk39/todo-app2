@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDsH2NevTy5ppEyOJp9kmDFxG8hmW96wzA",
-  authDomain: "wehelp-project.firebaseapp.com",
-  projectId: "wehelp-project",
-  storageBucket: "wehelp-project.appspot.com",
-  messagingSenderId: "434072008102",
-  appId: "1:434072008102:web:0cd60ebf9a555553e74b67",
-  measurementId: "G-1CG45N8YEH",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.FIREBASE_APPID,
+  measurementId: process.env.FIREBASE_MEASUREMENTID
 };
 
 // Initialize Firebase
