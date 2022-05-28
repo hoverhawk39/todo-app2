@@ -1,6 +1,7 @@
 const path=require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const env = dotenv.config().parsed
 const envKeys = Object.keys(env).reduce((prev, next) => {
@@ -19,7 +20,11 @@ module.exports={
         path:path.resolve(__dirname, "dist")
     },
     plugins: [
-        new webpack.DefinePlugin(envKeys)
+        new webpack.DefinePlugin(envKeys),
+        new HtmlWebpackPlugin({
+            template: "./dist/index.html",
+            favicon: "./images/favicon.ico",
+         }),
     ],
     // DevServer 設定
     devServer:{
