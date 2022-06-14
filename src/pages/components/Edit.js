@@ -4,28 +4,19 @@ import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 
 const todoRef = collection(db, "todos");
 
-const Edit = ({ add }) => {
+const Edit = () => {
   const [input, setInput] = useState([""]);
   function inputChange(e) {
     setInput(e.target.value);
   }
 
   function addItem() {
-    add(function (prevData) {
-      const additem = {
-        todo: input,
-        timestamp: serverTimestamp(),
-      };
-      addDoc(todoRef, additem);
-      setInput("");
-      return [
-        ...prevData,
-        {
-          id: additem.timestamp,
-          item: additem.todo,
-        },
-      ];
-    });
+    const additem = {
+      todo: input,
+      timestamp: serverTimestamp(),
+    };
+    addDoc(todoRef, additem);
+    setInput("");
   }
   return (
     <div className="addForm">
