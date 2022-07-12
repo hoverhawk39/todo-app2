@@ -1,5 +1,5 @@
 import React from "react";
-import db from "../../firestore";
+import db from "../../firebase";
 import { doc, deleteDoc } from "firebase/firestore";
 
 const Item = ({ id, input }) => {

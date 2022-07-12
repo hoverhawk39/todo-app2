@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-import db from "../../firestore";
+import db from "../../firebase";
 import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 import { SpinnerCircular } from "spinners-react";
 
+const spinner = { display: "block", margin: "auto" };
 const Query = query(collection(db, "todos"), orderBy("timestamp", "asc"));
 // const Collection = collection(db,'todos');
-const spinner = { display: "block", margin: "auto" };
 
-const List = ({ listData, set }) => {
+const List = ({ listData, setListData }) => {
   console.log("listData #1", listData);
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     onSnapshot(Query, (snapshot) => {
-      set(
+      setListData(
         snapshot.docs.map((doc) => ({
           index: doc.id,
           output: doc.data(),
@@ -51,7 +51,7 @@ const List = ({ listData, set }) => {
         listData.map((thing) => {
           const { index, output } = thing;
           const { todo, timestamp } = output;
-          console.log(todo);
+          {/* console.log(todo); */}
           return <Item key={index} id={index} input={todo} />;
         })
       )}

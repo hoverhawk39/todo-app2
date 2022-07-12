@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import db from "../../firestore";
+import db from "../../firebase";
 import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 
 const todoRef = collection(db, "todos");
