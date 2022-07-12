@@ -9,7 +9,7 @@ const Query = query(collection(db, "todos"), orderBy("timestamp", "asc"));
 // const Collection = collection(db,'todos');
 
 const List = ({ listData, setListData }) => {
-  console.log("listData #1", listData);
+  console.log("listData", listData);
 
   const [loading, setLoading] = useState(true);
 
@@ -26,10 +26,10 @@ const List = ({ listData, setListData }) => {
 
   useEffect(() => {
     if (listData.length != 0) {
-      console.log("length: not zero");
+      console.log("length of listData: not zero");
       setLoading(false);
     } else {
-      console.log("length: zero");
+      console.log("length of listData: zero");
       setTimeout(() => {
         setLoading(false);
       }, 3000);

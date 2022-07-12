@@ -10,10 +10,10 @@ const ListPage = ({loginStatus, setLoginStatus}) => {
   const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
   // const user = auth.currentUser;
-  console.log("狀態1 ",loginStatus);
+  console.log("登入狀態：",loginStatus);
 
   useEffect(() => {
-    console.log("ListPage UE ",loginStatus);
+    // console.log("ListPage UE ",loginStatus);
     if (!loginStatus) {
       navigate("/");
     }
@@ -23,7 +23,6 @@ const ListPage = ({loginStatus, setLoginStatus}) => {
     signOut(auth).then(() => {
       console.log("Sign Out Successfully.");
       setLoginStatus(false);
-      console.log("登出後當下狀態 ",loginStatus);
       // navigate("/");
     }).catch((error) => {
       console.log(error);
@@ -35,9 +34,6 @@ const ListPage = ({loginStatus, setLoginStatus}) => {
       <Edit />
       <List listData={todos} setListData={setTodos} />
       <div className="btn-part">
-        <Link to="/">
-          <button className="goback">返回首頁</button>
-        </Link>
           <button className="goback" onClick={signOutFromGoogle}>離開並登出Google帳戶</button>
       </div>
     </div>
