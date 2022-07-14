@@ -2,9 +2,9 @@ import React from "react";
 import db from "../../firebase";
 import { doc, deleteDoc } from "firebase/firestore";
 
-const Item = ({ id, input }) => {
+const Item = ({ id, input, path }) => {
   function deleteItem() {
-    deleteDoc(doc(db, "todos", id));
+    deleteDoc(doc(db, path, id));
   }
 
   return (

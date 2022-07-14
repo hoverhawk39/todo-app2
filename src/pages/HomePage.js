@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-const HomePage = ({loginStatus, setLoginStatus}) => {
-
+const HomePage = ({ loginStatus, setLoginStatus }) => {
   const navigate = useNavigate();
-
-  const signInWithGoogle = () =>{
+  const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
-    .then((result) => {
-      console.log(result);
-      setLoginStatus(true);
-    }).catch((error) => {
-      console.log(error);
-    })
-  }
+      .then((result) => {
+        console.log(result);
+        setLoginStatus(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     // console.log("HomePage UE ",loginStatus);
@@ -30,7 +29,9 @@ const HomePage = ({loginStatus, setLoginStatus}) => {
       <div className="header">React 練習專案</div>
       <div className="welcome">歡迎光臨我的頁面</div>
       <div className="btn-part">
-        <button className="start" onClick={signInWithGoogle}>以Google帳戶登入使用</button>
+        <button className="start" onClick={signInWithGoogle}>
+          以Google帳戶登入使用
+        </button>
       </div>
     </div>
   );

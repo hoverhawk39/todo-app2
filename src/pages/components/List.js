@@ -4,14 +4,20 @@ import db from "../../firebase";
 import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 import { SpinnerCircular } from "spinners-react";
 
-const spinner = { display: "block", margin: "auto" };
-const Query = query(collection(db, "todos"), orderBy("timestamp", "asc"));
-// const Collection = collection(db,'todos');
-
-const List = ({ listData, setListData }) => {
+const List = ({ listData, setListData, user }) => {
   console.log("listData", listData);
-
+  const spinner = { display: "block", margin: "auto" };
   const [loading, setLoading] = useState(true);
+  let uid;
+  if (user !== null) {
+    uid = user.uid;
+    // console.log("User-List: ",uid);
+  }
+  const Query = query(
+    collection(db, "todolist/" + uid + "/todoitems"),
+    orderBy("timestamp", "asc")
+  );
+  const dbPath = "todolist/" + uid + "/todoitems";
 
   useEffect(() => {
     onSnapshot(Query, (snapshot) => {
@@ -25,7 +31,7 @@ const List = ({ listData, setListData }) => {
   }, []);
 
   useEffect(() => {
-    if (listData.length != 0) {
+    if (listData.length !== 0) {
       console.log("length of listData: not zero");
       setLoading(false);
     } else {
@@ -51,8 +57,10 @@ const List = ({ listData, setListData }) => {
         listData.map((thing) => {
           const { index, output } = thing;
           const { todo, timestamp } = output;
-          {/* console.log(todo); */}
-          return <Item key={index} id={index} input={todo} />;
+          {
+            /* console.log(todo); */
+          }
+          return <Item key={index} id={index} input={todo} path={dbPath} />;
         })
       )}
     </div>
