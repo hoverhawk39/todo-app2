@@ -26,11 +26,16 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
 
   return (
     <div>
-      <div className="header">React 練習專案</div>
-      <div className="welcome">歡迎光臨我的頁面</div>
-      <div className="btn-part">
-        <button className="start" onClick={signInWithGoogle}>
-          以Google帳戶登入使用
+      <div className="header">My Backlog Record</div>
+      <div className="welcome">
+        “We are what we repeatedly do. Excellence, then, is not an act, but a
+        habit.”
+      </div>
+      <div className="author"> － Will Durant</div>
+      {/* </div> */}
+      <div className="btn-part-in">
+        <button className="sign-in" onClick={signInWithGoogle}>
+          Sign In with Google
         </button>
       </div>
     </div>

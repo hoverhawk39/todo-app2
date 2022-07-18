@@ -11,7 +11,7 @@ const Item = ({ id, input, path }) => {
     <div className="item">
       <div className="text">{input}</div>
       <button onClick={deleteItem} className="remove">
-        刪除
+        Delete
       </button>
     </div>
   );

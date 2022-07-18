@@ -1,53 +1,116 @@
-body,
-.container {
+* {
+  box-sizing: border-box;
+}
+body {
   margin: 0;
+  background-image: url("https://i.imgur.com/MOYieny.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  background-color: rgba(150, 150, 150, 0.3);
+  width: 50vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 75px 0 0;
 }
 .header {
-  height: 100px;
-  background-color: rgb(0, 56, 120);
-  color: white;
-  font-size: 25px;
+  height: 18vh;
+  width: 50vw;
+  background-color: rgba(237, 230, 138, 0.98);
+  color: #1e5128;
+  font-size: 27px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 25px;
+  border: grey solid 2px;
+  border-bottom: grey dashed 2px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 .welcome {
-  height: 200px;
-  background-color: #a8dbee;
-  color: black;
-  font-size: 25px;
+  height: 36vh;
+  width: 50vw;
+  background-color: rgba(237, 230, 138, 0.98);
+  color: #1e5128;
+  font-size: 22px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  border: grey solid 2px;
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+  text-align: left;
+}
+.author {
+  height: 50px;
+  text-align: end;
+  background-color: rgba(237, 230, 138, 0.98);
+  color: #1e5128;
+  font-size: 22px;
+  font-style: italic;
+  padding-right: 25px;
+  border: grey solid 2px;
+  border-top-style: hidden;
+  border-radius: 0 0 10px 10px;
+}
+.btn-part-in {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+.sign-in {
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  border: white solid 2px;
+  border-radius: 50px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.btn-part {
-  margin-top: 80px;
-  display: flex;
-  justify-content: center;
-}
-.start {
-  cursor: pointer;
-  height: 40px;
-}
 .app {
-  margin: 0px 10px;
+  border-radius: 0 0 10px 10px;
+  background-color: rgba(237, 230, 138, 0.98);
+  border: grey solid 2px;
+  border-top-style: hidden;
 }
 .addForm {
-  text-align: center;
-  padding: 50px 0 0 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 input {
-  height: 33px;
+  height: 40px;
+  // width: 280px;
+  font-size: 15px;
 }
 .insert {
   cursor: pointer;
   height: 40px;
   margin-left: 10px;
+  width: 80px;
+  border: grey solid 2px;
+  border-radius: 50px;
+  background-color: #61481c;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .list {
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 15px 5px;
+  margin: 0 auto;
 }
 .item {
   display: flex;
@@ -59,11 +122,54 @@ input {
   width: 400px;
   overflow-x: auto;
   text-overflow: clip;
+  color: #1e5128;
+  border-bottom: 1px solid black;
 }
 .remove {
   cursor: pointer;
+  height: 40px;
+  margin-left: 10px;
+  margin-left: 15px;
+  width: 90px;
+  border: grey solid 2px;
+  border-radius: 50px;
+  background-color: #890f0d;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.goback {
+.btn-part-out {
+  display: flex;
+  justify-content: center;
+}
+.sign-out {
   cursor: pointer;
   height: 40px;
+  width: 150px;
+  border: white solid 2px;
+  border-radius: 50px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .addForm {
+    display: block;
+    text-align: center;
+  }
+  .insert {
+    margin: 10px auto 0;
+  }
 }

@@ -47,10 +47,10 @@ const List = ({ listData, setListData, user }) => {
       {loading ? (
         <SpinnerCircular
           style={spinner}
-          size="20%"
+          size="15%"
           thickness={100}
           speed={100}
-          color="#0080FF"
+          color="#890F0D"
           secondaryColor="rgba(0, 0, 0, 0.44)"
         />
       ) : (

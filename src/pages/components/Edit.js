@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import db from "../../firebase";
-import { serverTimestamp, collection, doc, addDoc } from "firebase/firestore";
+import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 
 const Edit = ({ user }) => {
   const [input, setInput] = useState([""]);
@@ -26,11 +26,16 @@ const Edit = ({ user }) => {
 
   return (
     <div className="addForm">
-      <input type="text" value={input} onChange={inputChange} />
+      <input
+        type="text"
+        placeholder="Things to be done ..."
+        value={input}
+        onChange={inputChange}
+      />
       <button onClick={addItem} className="insert">
-        新增紀錄
+        Create
       </button>
-      <hr />
+      {/* <hr /> */}
     </div>
   );
 };

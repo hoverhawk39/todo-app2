@@ -41,12 +41,15 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
   }, [loginStatus]);
 
   return (
-    <div className="app">
-      <Edit user={user} />
-      <List listData={todos} setListData={setTodos} user={user} />
-      <div className="btn-part">
-        <button className="goback" onClick={signOutFromGoogle}>
-          離開並登出Google帳戶
+    <div>
+      <div className="header">My Backlog Record</div>
+      <div className="app">
+        <Edit user={user} />
+        <List listData={todos} setListData={setTodos} user={user} />
+      </div>
+      <div className="btn-part-out">
+        <button className="sign-out" onClick={signOutFromGoogle}>
+          Sign Out
         </button>
       </div>
     </div>
