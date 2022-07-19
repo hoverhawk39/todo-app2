@@ -3,23 +3,23 @@
 }
 body {
   margin: 0;
-  background-image: url("https://i.imgur.com/MOYieny.jpg");
+  background: url("https://i.imgur.com/MOYieny.jpg") no-repeat left;
   background-attachment: fixed;
   background-size: cover;
 }
 .container {
   background-color: rgba(150, 150, 150, 0.3);
-  width: 50vw;
+  width: 70vw;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 75px 0 0;
+  padding: 60px 0 20px;
 }
 .header {
   height: 18vh;
-  width: 50vw;
-  background-color: rgba(237, 230, 138, 0.98);
+  // width: 50vw;
+  background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -30,10 +30,10 @@ body {
   border-radius: 10px 10px 0 0;
   text-align: center;
 }
-.welcome {
+.quote {
   height: 36vh;
-  width: 50vw;
-  background-color: rgba(237, 230, 138, 0.98);
+  // width: 50vw;
+  background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
   font-size: 22px;
   font-style: italic;
@@ -58,8 +58,8 @@ body {
   border-top-style: hidden;
   border-radius: 0 0 10px 10px;
 }
-.btn-part-in {
-  margin-top: 60px;
+.btn-part-sign-in {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
@@ -82,7 +82,7 @@ body {
   border: grey solid 2px;
   border-top-style: hidden;
 }
-.addForm {
+.add-form {
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -93,54 +93,48 @@ input {
   // width: 280px;
   font-size: 15px;
 }
-.insert {
+.create {
   cursor: pointer;
   height: 40px;
   margin-left: 10px;
   width: 80px;
-  border: grey solid 2px;
+  border: #61481c;
   border-radius: 50px;
   background-color: #61481c;
   font-size: 15px;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .list {
-  max-width: 500px;
+  max-width: 650px;
   padding: 0 15px 5px;
   margin: 0 auto;
 }
 .item {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin: 20px 0px;
 }
 .text {
-  width: 400px;
-  overflow-x: auto;
-  text-overflow: clip;
+  width: 55vw;
+  font-size: 18px;
+  // overflow-x: auto;
+  // text-overflow: clip;
   color: #1e5128;
   border-bottom: 1px solid black;
 }
-.remove {
+.delete {
   cursor: pointer;
-  height: 40px;
-  margin-left: 10px;
+  height: 25px;
   margin-left: 15px;
-  width: 90px;
-  border: grey solid 2px;
+  min-width: 80px;
+  border: #890f0d;
   border-radius: 50px;
   background-color: #890f0d;
   font-size: 15px;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.btn-part-out {
+.btn-part-sign-out {
   display: flex;
   justify-content: center;
 }
@@ -159,17 +153,25 @@ input {
   margin: 30px 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
+  .add-form {
+    justify-content: space-evenly;
+  }
   input {
-    width: 150px;
+    width: 190px;
+  }
+  .create {
+    width: 70px;
+  }
+  .delete {
+    min-width: 70px;
   }
 }
-@media screen and (max-width: 500px) {
-  .addForm {
-    display: block;
-    text-align: center;
+@media screen and (max-width: 410px) {
+  input {
+    width: 155px;
   }
-  .insert {
-    margin: 10px auto 0;
+  .create {
+    width: 70px;
   }
 }

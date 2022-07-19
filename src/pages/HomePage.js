@@ -27,13 +27,13 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
   return (
     <div>
       <div className="header">My Backlog Record</div>
-      <div className="welcome">
+      <div className="quote">
         “We are what we repeatedly do. Excellence, then, is not an act, but a
         habit.”
       </div>
       <div className="author"> － Will Durant</div>
       {/* </div> */}
-      <div className="btn-part-in">
+      <div className="btn-part-sign-in">
         <button className="sign-in" onClick={signInWithGoogle}>
           Sign In with Google
         </button>

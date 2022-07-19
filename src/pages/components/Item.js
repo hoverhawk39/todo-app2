@@ -10,7 +10,7 @@ const Item = ({ id, input, path }) => {
   return (
     <div className="item">
       <div className="text">{input}</div>
-      <button onClick={deleteItem} className="remove">
+      <button onClick={deleteItem} className="delete">
         Delete
       </button>
     </div>

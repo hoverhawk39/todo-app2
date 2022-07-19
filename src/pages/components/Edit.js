@@ -25,14 +25,14 @@ const Edit = ({ user }) => {
   }
 
   return (
-    <div className="addForm">
+    <div className="add-form">
       <input
         type="text"
         placeholder="Things to be done ..."
         value={input}
         onChange={inputChange}
       />
-      <button onClick={addItem} className="insert">
+      <button onClick={addItem} className="create">
         Create
       </button>
       {/* <hr /> */}

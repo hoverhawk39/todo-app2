@@ -47,7 +47,7 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
         <Edit user={user} />
         <List listData={todos} setListData={setTodos} user={user} />
       </div>
-      <div className="btn-part-out">
+      <div className="btn-part-sign-out">
         <button className="sign-out" onClick={signOutFromGoogle}>
           Sign Out
         </button>
