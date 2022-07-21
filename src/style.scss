@@ -1,22 +1,39 @@
 * {
   box-sizing: border-box;
 }
-body {
+
+html, body {
   margin: 0;
-  background: url("https://i.imgur.com/MOYieny.jpg") no-repeat left;
-  background-attachment: fixed;
-  background-size: cover;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  // border: 1px solid red;
 }
+
+#root{
+  background: url("https://i.imgur.com/MOYieny.jpg") no-repeat left;
+  // background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+  // border: 1px solid blue;
+  position: fixed;
+  overflow: scroll;
+}
+
 .container {
   background-color: rgba(150, 150, 150, 0.3);
   width: 70vw;
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 60px 0 20px;
+  // margin: 0 auto;
+  padding: 60px 0 25px;
+  // border: 1px solid orange;
+  position: absolute;
+  left: 15vw;
+  right: 15vw;
 }
 .header {
   height: 18vh;
-  // width: 50vw;
   background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
   font-size: 30px;
@@ -32,7 +49,6 @@ body {
 }
 .quote {
   height: 36vh;
-  // width: 50vw;
   background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
   font-size: 22px;
@@ -154,6 +170,9 @@ input {
 }
 
 @media screen and (max-width: 450px) {
+  .header{
+    font-size: 28px;
+  }
   .add-form {
     justify-content: space-evenly;
   }
@@ -168,6 +187,10 @@ input {
   }
 }
 @media screen and (max-width: 410px) {
+  .header{
+    font-size: 25px;
+    height: 100px;
+  }
   input {
     width: 155px;
   }
