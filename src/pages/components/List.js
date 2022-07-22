@@ -53,15 +53,15 @@ const List = ({ listData, setListData, user }) => {
           color="#890F0D"
           secondaryColor="rgba(0, 0, 0, 0.44)"
         />
-      ) : (
+      ) : ( listData.length ?
         listData.map((thing) => {
           const { index, output } = thing;
           const { todo, timestamp } = output;
           {
             /* console.log(todo); */
           }
-          return <Item key={index} id={index} input={todo} path={dbPath} />;
-        })
+          return <Item key={index} id={index} input={todo} path={dbPath}/>;
+        }) : <div className="default">I got everything completed. Hurray!</div>
       )}
     </div>
   );

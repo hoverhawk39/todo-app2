@@ -32,7 +32,6 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
         habit.”
       </div>
       <div className="author"> － Will Durant</div>
-      {/* </div> */}
       <div className="btn-part-sign-in">
         <button className="sign-in" onClick={signInWithGoogle}>
           Sign In with Google

@@ -35,7 +35,6 @@ const Edit = ({ user }) => {
       <button onClick={addItem} className="create">
         Create
       </button>
-      {/* <hr /> */}
     </div>
   );
 };
