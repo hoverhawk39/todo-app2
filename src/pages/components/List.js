@@ -5,7 +5,7 @@ import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 import { SpinnerCircular } from "spinners-react";
 
 const List = ({ listData, setListData, user }) => {
-  console.log("listData", listData);
+  // console.log("listData", listData);
   const spinner = { display: "block", margin: "auto" };
   const [loading, setLoading] = useState(true);
   let uid;
@@ -32,10 +32,10 @@ const List = ({ listData, setListData, user }) => {
 
   useEffect(() => {
     if (listData.length !== 0) {
-      console.log("length of listData: not zero");
+      // console.log("length of listData: not zero");
       setLoading(false);
     } else {
-      console.log("length of listData: zero");
+      // console.log("length of listData: zero");
       setTimeout(() => {
         setLoading(false);
       }, 3000);
@@ -53,15 +53,17 @@ const List = ({ listData, setListData, user }) => {
           color="#890F0D"
           secondaryColor="rgba(0, 0, 0, 0.44)"
         />
-      ) : ( listData.length ?
+      ) : listData.length ? (
         listData.map((thing) => {
           const { index, output } = thing;
           const { todo, timestamp } = output;
           {
             /* console.log(todo); */
           }
-          return <Item key={index} id={index} input={todo} path={dbPath}/>;
-        }) : <div className="default">I got everything completed. Hurray!</div>
+          return <Item key={index} id={index} input={todo} path={dbPath} />;
+        })
+      ) : (
+        <div className="default">I got everything completed. Hurray!</div>
       )}
     </div>
   );

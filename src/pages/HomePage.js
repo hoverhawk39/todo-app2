@@ -9,7 +9,7 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setLoginStatus(true);
       })
       .catch((error) => {

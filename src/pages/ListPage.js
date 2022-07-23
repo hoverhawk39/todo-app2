@@ -12,19 +12,19 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
   const user = auth.currentUser;
   if (user !== null) {
     const uid = user.uid;
-    console.log("User-ListPage: ", uid);
+    // console.log("User-ListPage: ", uid);
     const userUid = {
       uid: uid,
     };
     setDoc(doc(db, "todolist", uid), userUid);
   }
 
-  console.log("登入狀態：", loginStatus);
+  // console.log("登入狀態：", loginStatus);
 
   const signOutFromGoogle = () => {
     signOut(auth)
       .then(() => {
-        console.log("Sign Out Successfully.");
+        // console.log("Sign Out Successfully.");
         setLoginStatus(false);
         // navigate("/");
       })

@@ -1,16 +1,15 @@
 * {
   box-sizing: border-box;
 }
-
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
   // border: 1px solid red;
 }
-
-#root{
+#root {
   background: url("https://i.imgur.com/MOYieny.jpg") no-repeat left;
   // background-attachment: fixed;
   background-size: cover;
@@ -20,7 +19,6 @@ html, body {
   position: fixed;
   overflow: scroll;
 }
-
 .container {
   background-color: rgba(150, 150, 150, 0.3);
   width: 70vw;
@@ -125,8 +123,7 @@ input {
   padding: 0 15px 5px;
   margin: 0 auto;
 }
-
-.default{
+.default {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
@@ -134,7 +131,6 @@ input {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 .item {
   display: flex;
   justify-content: space-evenly;
@@ -180,7 +176,7 @@ input {
 }
 
 @media screen and (max-width: 450px) {
-  .header{
+  .header {
     font-size: 28px;
   }
   .add-form {
@@ -197,7 +193,7 @@ input {
   }
 }
 @media screen and (max-width: 410px) {
-  .header{
+  .header {
     font-size: 25px;
     height: 100px;
   }
