@@ -7,7 +7,6 @@ import { signOut } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 const ListPage = ({ loginStatus, setLoginStatus }) => {
-  const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
   const user = auth.currentUser;
   if (user !== null) {
@@ -17,15 +16,16 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
       uid: uid,
     };
     setDoc(doc(db, "todolist", uid), userUid);
+    localStorage.setItem("user-id", JSON.stringify(uid));
   }
-
+  const userId = JSON.parse(localStorage.getItem("user-id"));
   // console.log("登入狀態：", loginStatus);
 
   const signOutFromGoogle = () => {
     signOut(auth)
       .then(() => {
         // console.log("Sign Out Successfully.");
-        setLoginStatus(false);
+        setLoginStatus(!loginStatus);
         // navigate("/");
       })
       .catch((error) => {
@@ -35,6 +35,7 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
 
   useEffect(() => {
     // console.log("ListPage UE ",loginStatus);
+    localStorage.setItem("login-status", JSON.stringify(loginStatus));
     if (!loginStatus) {
       navigate("/");
     }
@@ -44,8 +45,8 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
     <div>
       <div className="header">My Backlog Record</div>
       <div className="app">
-        <Edit user={user} />
-        <List listData={todos} setListData={setTodos} user={user} />
+        <Edit user={userId} />
+        <List user={userId} />
       </div>
       <div className="btn-part-sign-out">
         <button className="sign-out" onClick={signOutFromGoogle}>

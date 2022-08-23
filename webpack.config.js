@@ -28,7 +28,11 @@ module.exports={
     ],
     // DevServer 設定
     devServer:{
-        static:"./dist"
+        static:"./dist",
+        // contentBase: path.join(__dirname, "/dist"),
+        hot: true,
+        // watchContentBase: true,
+        historyApiFallback: true,
     },
     // 模組載入規則
     module:{

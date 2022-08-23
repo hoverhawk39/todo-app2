@@ -4,12 +4,7 @@ import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 
 const Edit = ({ user }) => {
   const [input, setInput] = useState([""]);
-  let uid;
-  if (user !== null) {
-    uid = user.uid;
-    // console.log("User-Edit: ", uid);
-  }
-  const todoItem = collection(db, "todolist/" + uid + "/todoitems");
+  const todoItem = collection(db, "todolist/" + user + "/todoitems");
 
   function inputChange(e) {
     setInput(e.target.value);

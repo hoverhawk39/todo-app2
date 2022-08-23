@@ -10,7 +10,7 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
     signInWithPopup(auth, provider)
       .then((result) => {
         // console.log(result);
-        setLoginStatus(true);
+        setLoginStatus(!loginStatus);
       })
       .catch((error) => {
         console.log(error);
@@ -19,6 +19,7 @@ const HomePage = ({ loginStatus, setLoginStatus }) => {
 
   useEffect(() => {
     // console.log("HomePage UE ",loginStatus);
+    localStorage.setItem("login-status", JSON.stringify(loginStatus));
     if (loginStatus) {
       navigate("/list");
     }
