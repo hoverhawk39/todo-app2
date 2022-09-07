@@ -1,13 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Switch from "./components/Switch";
 import Edit from "./components/Edit";
 import List from "./components/List";
+import { useSelector } from "react-redux";
 import db, { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 const ListPage = ({ loginStatus, setLoginStatus }) => {
+  const switch_before = {
+    header: "My Backlog Record",
+    btn: "Sign Out"
+  };
+  const switch_after = {
+    header: "我的待辦事項",
+    btn: "登出"
+  };
   const navigate = useNavigate();
+  const change = useSelector((state)=>state.lang.value);
   const user = auth.currentUser;
   if (user !== null) {
     const uid = user.uid;
@@ -43,14 +54,15 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
 
   return (
     <div>
-      <div className="header">My Backlog Record</div>
-      <div className="app">
+      <div className="header">{change?switch_after.header:switch_before.header}</div>
+      <Switch/>
+      <div className="core-app">
         <Edit user={userId} />
         <List user={userId} />
       </div>
       <div className="btn-part-sign-out">
         <button className="sign-out" onClick={signOutFromGoogle}>
-          Sign Out
+          {change?switch_after.btn:switch_before.btn}
         </button>
       </div>
     </div>

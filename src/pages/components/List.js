@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
+import { useSelector } from "react-redux";
 import db from "../../firebase";
 import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 import { SpinnerCircular } from "spinners-react";
 
 const List = ({ user }) => {
   // console.log("listData", listData);
+  const switch_before = {
+    default: "I got everything completed. Hurray!"
+  };
+  const switch_after = {
+    default: "尚未有待辦事項"
+  };
+  const change = useSelector((state)=>state.lang.value);
   const spinner = { display: "block", margin: "auto" };
   const [listData, setListData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +24,7 @@ const List = ({ user }) => {
   );
 
   useEffect(() => {
-    console.log("onSnapshot works !!");
+    // console.log("onSnapshot works !!");
     const unsubscribe = onSnapshot(Query, (snapshot) => {
       setListData(
         snapshot.docs.map((doc) => ({
@@ -38,10 +46,10 @@ const List = ({ user }) => {
       // console.log("length of listData: zero");
       setTimeout(() => {
         setLoading(false);
-      }, 3500);
+      }, 4000);
     }
   }, [listData]);
-  console.log(">> Length of ListData: ", listData.length);
+
   return (
     <div className="list">
       {loading ? (
@@ -63,7 +71,7 @@ const List = ({ user }) => {
           return <Item key={index} id={index} input={todo} path={dbPath} />;
         })
       ) : (
-        <div className="default">I got everything completed. Hurray!</div>
+        <div className="default">{change?switch_after.default:switch_before.default}</div>
       )}
     </div>
   );
