@@ -3,12 +3,12 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./pages/App";
-import {configureStore} from "@reduxjs/toolkit";
-import {Provider} from "react-redux";
-import SwitchReducer from "./features/reducer"; 
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import SwitchReducer from "./features/reducer";
 
 const store = configureStore({
-  reducer:{
+  reducer: {
     lang: SwitchReducer,
   },
 });

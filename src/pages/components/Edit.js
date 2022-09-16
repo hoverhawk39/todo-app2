@@ -6,15 +6,15 @@ import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 const Edit = ({ user }) => {
   const switch_before = {
     placehodler: "Things to be done ...",
-    create: "Create"
+    create: "Create",
   };
   const switch_after = {
     placehodler: "待解決事項 ...",
-    create: "新增"
+    create: "新增",
   };
   const [input, setInput] = useState([""]);
   const todoItem = collection(db, "todolist/" + user + "/todoitems");
-  const change = useSelector((state)=>state.lang.value);
+  const change = useSelector((state) => state.lang.value);
 
   function inputChange(e) {
     setInput(e.target.value);
@@ -33,12 +33,14 @@ const Edit = ({ user }) => {
     <div className="add-form">
       <input
         type="text"
-        placeholder={change?switch_after.placehodler:switch_before.placehodler}
+        placeholder={
+          change ? switch_after.placehodler : switch_before.placehodler
+        }
         value={input}
         onChange={inputChange}
       />
       <button onClick={addItem} className="create">
-        {change?switch_after.create:switch_before.create}
+        {change ? switch_after.create : switch_before.create}
       </button>
     </div>
   );

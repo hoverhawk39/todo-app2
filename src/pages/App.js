@@ -9,7 +9,7 @@ const App = () => {
   const [status, setStatus] = useState(
     JSON.parse(localStorage.getItem("login-status")) || false
   );
-  const change = useSelector((state)=>state.lang.value);
+  const change = useSelector((state) => state.lang.value);
 
   useEffect(() => {
     // console.log("HomePage UE ",loginStatus);

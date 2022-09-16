@@ -30,24 +30,27 @@ body {
   left: 15vw;
   right: 15vw;
 }
+.main {
+  display: block;
+}
 .header {
-  height: 12vh;
+  height: 75px;
   background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   padding: 0 25px;
   border: grey solid 2px;
   border-bottom: none;
   border-radius: 10px 10px 0 0;
   text-align: center;
-  line-height: 1.1;
+  // line-height: 1.1;
 }
 .quote {
-  height: 36vh;
+  height: 240px;
   background-color: rgba(237, 230, 138, 0.975);
   color: #1e5128;
   font-size: 22px;
@@ -61,18 +64,18 @@ body {
   border-bottom-style: hidden;
   text-align: left;
 }
-.language{
+.language {
   display: flex;
   justify-content: end;
   background-color: rgba(237, 230, 138, 0.975);
   border: grey solid 2px;
   border-top-style: hidden;
   border-bottom: grey dashed 2px;
-  padding-top: 10px;
+  padding-top: 0px;
   padding-bottom: 5px;
 }
-.switch{
-  background-color: #521E48;
+.switch {
+  background-color: #521e48;
   width: 52px;
   height: 26px;
   border-radius: 13px;
@@ -81,7 +84,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  .btn{
+  .btn {
     background-color: white;
     width: 24px;
     height: 24px;
@@ -89,13 +92,13 @@ body {
     border: 1px solid grey;
   }
 }
-.switch-ch{
+.switch-ch {
   background-color: #6f2082;
-  .btn{
+  .btn {
     margin-left: 28px;
   }
 }
-.language-info{
+.language-info {
   margin: auto 5px;
   font-size: 15px;
 }
@@ -216,7 +219,7 @@ input {
 
 @media screen and (max-width: 450px) {
   .header {
-    font-size: 28px;
+    // font-size: 28px;
     line-height: 1;
   }
   .add-form {
@@ -235,7 +238,7 @@ input {
 @media screen and (max-width: 410px) {
   .header {
     font-size: 25px;
-    height: 10vh;
+    // height: 10vh;
   }
   input {
     width: 155px;
@@ -243,8 +246,8 @@ input {
   .create {
     width: 70px;
   }
-  .switch{
-    background-color: #521E48;
+  .switch {
+    background-color: #521e48;
     width: 48px;
     height: 24px;
     border-radius: 12px;
@@ -253,7 +256,7 @@ input {
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-    .btn{
+    .btn {
       background-color: white;
       width: 22px;
       height: 22px;
@@ -261,9 +264,9 @@ input {
       border: 1px solid grey;
     }
   }
-  .switch-ch{
+  .switch-ch {
     background-color: #6f2082;
-    .btn{
+    .btn {
       margin-left: 26px;
     }
   }

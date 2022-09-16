@@ -11,14 +11,14 @@ import { doc, setDoc } from "firebase/firestore";
 const ListPage = ({ loginStatus, setLoginStatus }) => {
   const switch_before = {
     header: "My Backlog Record",
-    btn: "Sign Out"
+    btn: "Sign Out",
   };
   const switch_after = {
     header: "我的待辦事項",
-    btn: "登出"
+    btn: "登出",
   };
   const navigate = useNavigate();
-  const change = useSelector((state)=>state.lang.value);
+  const change = useSelector((state) => state.lang.value);
   const user = auth.currentUser;
   if (user !== null) {
     const uid = user.uid;
@@ -53,16 +53,18 @@ const ListPage = ({ loginStatus, setLoginStatus }) => {
   }, [loginStatus]);
 
   return (
-    <div>
-      <div className="header">{change?switch_after.header:switch_before.header}</div>
-      <Switch/>
+    <div className="main">
+      <div className="header">
+        {change ? switch_after.header : switch_before.header}
+      </div>
+      <Switch />
       <div className="core-app">
         <Edit user={userId} />
         <List user={userId} />
       </div>
       <div className="btn-part-sign-out">
         <button className="sign-out" onClick={signOutFromGoogle}>
-          {change?switch_after.btn:switch_before.btn}
+          {change ? switch_after.btn : switch_before.btn}
         </button>
       </div>
     </div>

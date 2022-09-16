@@ -8,12 +8,12 @@ import { SpinnerCircular } from "spinners-react";
 const List = ({ user }) => {
   // console.log("listData", listData);
   const switch_before = {
-    default: "I got everything completed. Hurray!"
+    default: "I got everything completed. Hurray!",
   };
   const switch_after = {
-    default: "尚未有待辦事項"
+    default: "尚未有待辦事項",
   };
-  const change = useSelector((state)=>state.lang.value);
+  const change = useSelector((state) => state.lang.value);
   const spinner = { display: "block", margin: "auto" };
   const [listData, setListData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,7 +71,9 @@ const List = ({ user }) => {
           return <Item key={index} id={index} input={todo} path={dbPath} />;
         })
       ) : (
-        <div className="default">{change?switch_after.default:switch_before.default}</div>
+        <div className="default">
+          {change ? switch_after.default : switch_before.default}
+        </div>
       )}
     </div>
   );
